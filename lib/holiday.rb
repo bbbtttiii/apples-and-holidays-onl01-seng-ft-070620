@@ -44,9 +44,11 @@ end
 
 
 def all_holidays_with_bbq(holiday_hash)
+  bbq_array = []
   holiday_hash.map do |season, holidays|
     holidays.map do |holidays, supplies|
-      holiday if supplies.include?("BBQ")
+      if supplies.include?("BBQ")
+        bbq_array << holidays
     end
   end
 end
